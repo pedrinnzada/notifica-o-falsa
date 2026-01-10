@@ -4,10 +4,10 @@ async function notificar() {
     return;
   }
 
-  const valor = document.getElementById("valor").value || "Você";
+  const nome = document.getElementById("nome").value || "Você";
 
   const titulo = document.getElementById("titulo").value || "Notificação";
-  const mensagem = `Você recebeu um presente, parabéns ${valor}! 🎉`;
+  const mensagem = `Você recebeu um presente, parabéns ${nome}! 🎉`;
 
   const permissao = await Notification.requestPermission();
 
