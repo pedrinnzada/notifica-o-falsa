@@ -4,8 +4,10 @@ async function notificar() {
     return;
   }
 
+  const valor = document.getElementById("valor").value || "Você";
+
   const titulo = document.getElementById("titulo").value || "Notificação";
-  const mensagem = document.getElementById("mensagem").value || "Mensagem padrão";
+  const mensagem = `Você recebeu um presente, parabéns ${valor}! 🎉`;
 
   const permissao = await Notification.requestPermission();
 
@@ -16,7 +18,5 @@ async function notificar() {
         icon: "icons/nubank.png"
       });
     });
-  } else {
-    alert("Permissão negada");
   }
 }
