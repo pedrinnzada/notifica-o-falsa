@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Notificação</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- iOS -->
+  <link rel="apple-touch-icon" href="icons/nubank.png">
+</head>
+<body>
+<header class="header">
+  <div class="logo">NUBANK<span>PRO</span></div>
+</header>
+
+<section class="box">
+  <h2> Digite o Título </h2>
+  <input type="text" id="titulo" placeholder="Título">
+  <h2> Mensagem </h2>
+  <textarea id="mensagem" placeholder="Mensagem"></textarea>
+
+  <button onclick="notificar()">Notificar</button>
+
+  <p class="ios-alert">
+    📱 No iPhone, adicione à Tela de Início para receber notificações.
+  </p>
+</section>
+<script src="script.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
+
+</body>
+</html>
