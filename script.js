@@ -21,7 +21,7 @@ async function notificar() {
           icon: "icons/nubank.png"
         });
       });
-    }, 5000);
+    }, 3000);
 
   }
 }
