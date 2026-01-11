@@ -20,11 +20,13 @@
 
 <section class="box">
   <h2> Digite o Título </h2>
-  <input type="text" id="nome" placeholder="Título">
-  <h2> Mensagem </h2>
-  <textarea id="valor" placeholder="Valor"></textarea>
-
-  <button onclick="notificar()">Notificar</button>
+  <input type="text" id="nome" placeholder="Transferência Recebida"></input>
+  <h2> Valor </h2>
+  <input type="text" id="valor" placeholder="Valor (ex: 120,00)" inputmode="decimal"></input>  
+  
+  <div class="icon">
+  <button onclick="notificar()"><i class="fa-solid fa-bell"></i> Notificar</button>
+</div>
 
   <p class="ios-alert">
     📱 No iPhone, adicione à Tela de Início para receber notificações.
@@ -37,6 +39,14 @@
     navigator.serviceWorker.register('service-worker.js');
   }
 </script>
+<script>
+import { createIcons, bell } from 'lucide';
 
+createIcons({
+  icons: {
+    bell
+  }
+});
+</script>
 </body>
 </html>
