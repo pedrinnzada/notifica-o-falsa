@@ -4,17 +4,18 @@ async function notificar() {
     return;
   }
 
-  const nome = document.getElementById("nome").value || "Você";
-
   const titulo = document.getElementById("titulo").value || "Notificação";
-  const mensagem = `Você recebeu um presente, parabéns ${nome}! 🎉`;
+  const valor = document.getElementById("mensagem").value || "R$ 0,00";
+
+  // 👉 FRASE FIXA AQUI
+  const mensagemFinal = `Você recebeu um depósito no valor de ${valor}.`;
 
   const permissao = await Notification.requestPermission();
 
   if (permissao === "granted") {
     navigator.serviceWorker.ready.then(registro => {
       registro.showNotification(titulo, {
-        body: mensagem,
+        body: mensagemFinal,
         icon: "icons/nubank.png"
       });
     });
