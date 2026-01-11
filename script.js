@@ -4,10 +4,13 @@ async function notificar() {
     return;
   }
 
-  const titulo = document.getElementById("titulo").value || "Notificação";
-  const valor = document.getElementById("mensagem").value || "R$ 0,00";
+  // 🔹 TÍTULO vem do input
+  const titulo = document.getElementById("nome").value || "Notificação";
 
-  // 👉 FRASE FIXA AQUI
+  // 🔹 VALOR vem do campo mensagem
+  const valor = document.getElementById("valor").value || "R$ 0,00";
+
+  // 🔹 FRASE FIXA
   const mensagemFinal = `Você recebeu um depósito no valor de ${valor}.`;
 
   const permissao = await Notification.requestPermission();
